@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      console.log(3<5);
+      // == converts to same type and hence shows both are equal
+      // === is used to actually see if both are equal here 5 and '5.00' are not
+      /*
+      console.log(5 == '5.00');
+
+      if(3>5){
+        console.log('hello');
+      }
+      else{
+        console.log('else');
+      }
+
+      const age = 15;
+      if(age >= 16){
+        console.log('You can drive');
+        console.log('Congrats');
+      }
+      else if (age >= 14){
+        console.log('almost there!');
+      }
+      else{
+        console.log('You cannot drive');
+      }
+
+      console.log(true || false);
+      console.log(!true);
+      */
+
+      const cartQuantity = 5;
+      if(cartQuantity){
+        console.log('cart has products');
+      }
+
+      console.log(!0);
+      console.log('text' / 5);
+
+      let var1;
+      console.log(var1);
+      //const var1 = undefined
+
+
+      const result = 0 ? 'truthy' : 'falsy' 
+      //ternary operator ?: (shortcut of if-else)
+      console.log(result);
+
+      //guard operator &&
+      false && console.log('hello');
+
+      const message = 5 && 'hello';
+      console.log(message);
+
+      //default operator ||
+      const currrency = NaN ||'USD';
+      console.log(currrency)
+
+    </script>
+  </body>
+</html>

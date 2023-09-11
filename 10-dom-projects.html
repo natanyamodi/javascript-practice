@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <title>DOM Projects</title>
+  <head>
+    <style>
+      body{
+        font-family: Arial;
+      }
+
+      .subscribe-button{
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 15px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 30px;
+      }
+
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input{
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .calculate-button{
+        background-color: green;
+        color: white;
+        padding: 12px 15px;
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="
+      subscribe();
+    " class="js-subscribe-button subscribe-button">
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="
+      handleCostKeydown(event);
+    ">
+    <button onclick="
+      calculateShipping();
+    " class="calculate-button">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+      function handleCostKeydown(event) {
+        if(event.key === 'Enter') {
+          calculateShipping();
+        }
+      }
+
+      function subscribe(){
+        const buttonElem = document.querySelector('.js-subscribe-button');
+
+        if (buttonElem.innerText === 'Subscribe') {
+          buttonElem.innerText = 'Subscribed';
+          buttonElem.classList.add('is-subscribed');
+        }
+        else{
+          buttonElem.innerText = 'Subscribe';
+          buttonElem.classList.remove('is-subscribed');
+        }
+      }
+
+      function calculateShipping(){
+        const inputCost = document.querySelector('.js-cost-input');
+
+        let cost = Number(inputCost.value);
+        if(cost < 40){
+          cost =  10 + cost;
+        }
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`
+        
+      }
+    </script>
+  
+  </body>
+</html>

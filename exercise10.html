@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .add-button{
+        background-color: rgb(255, 216, 20);
+        border: none;
+        padding: 8px 45px;
+        font-size: 20px;
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+
+      .req-button{
+        background-color: black;
+        padding: 10px 15px;
+        font-size: 20px;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        margin-right: 25px;
+      }
+
+      .schedule-button{
+        background-color: rgb(230, 230, 230);
+        padding: 10px 15px;
+        font-size: 20px;
+        color: black;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .toggle-button {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .is-toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="add-button">Add to Cart</button>
+    <p></p>
+    <button class="req-button"> Request Now</button>
+    <button class="schedule-button">Schedule for later</button>
+
+    <p></p>
+
+    <button class="toggle-button js-button" onclick="
+      toggleButton('.js-button');
+    ">Gaming</button>
+
+    <button class="toggle-button js-button-2" onclick="
+      toggleButton('.js-button-2');
+    ">Music</button>
+
+    <button class="toggle-button js-button-3" onclick="
+      toggleButton('.js-button-3');
+    ">Tech</button>
+
+    <script>
+      console.log(document.querySelector('.req-button').classList.contains('req-button'));
+
+      function toggleButton(selector) {
+      const button = document.querySelector(selector);
+      if (!button.classList.contains('is-toggled')) {
+        turnOffPreviousButton();
+
+        button.classList.add('is-toggled');
+      } else {
+        button.classList.remove('is-toggled');
+      }
+    }
+
+    function turnOffPreviousButton() {
+      const previousButton = document.querySelector('.is-toggled');
+      if (previousButton) {
+        previousButton.classList.remove('is-toggled');
+      }
+    }
+    </script>
+  </body>
+</html>

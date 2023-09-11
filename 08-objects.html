@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <script>
+      /*const product = {
+        name: 'socks',
+        price: 1090
+      };
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product); 
+      
+
+      const product2 = {
+        name: 'shirt',
+        'deliver-time': '1 day',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1(){
+          console.log('function inside pbject');
+        }
+      };
+
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+      console.log(product2.rating.stars);
+
+      product2.fun();
+
+      console.log(JSON.stringify(product2));
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString)); //converts string to object
+      */
+
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase);
+
+      const obj1 = {
+        message: 'hello'
+      };
+
+      const obj2 = obj1;
+      obj1.message = 'good job';
+      console.log(obj1);
+      console.log(obj2);
+
+      const obj3 = {
+        message: 'good job!'
+      };
+      console.log(obj3 === obj1); //false
+      console.log(obj2 === obj1); //true
+
+      const obj4 = {
+        message: 'good job',
+        price: 799
+      };  
+      // const message = obj4.message;
+
+      const { message, price } = obj4; //destructuring
+      console.log(obj4);
+      console.log(message);
+      console.log(price);
+
+      const obj5 = {
+        //message: message;
+        message, //shorthand property
+        //method: function function1() {
+        //  console.log('method');
+        //}
+        method(){
+          console.log('method')
+        }
+      };
+      console.log(obj5); 
+      obj5.method();
+
+      //shorthand property
+    </script>
+  </body>
+</html>
